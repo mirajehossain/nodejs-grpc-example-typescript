@@ -1,0 +1,44 @@
+{
+    "name": "grpc-example-nodejs",
+    "version": "1.0.0",
+    "description": "gRPC example with nodejs/typescript",
+    "main": "app.ts",
+    "repository": "https://github.com/mirajehossain/nodejs-grpc-example-typescript.git",
+    "author": "Md. Alamin",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "clean": "rm -rf build",
+        "start": "node -r dotenv/config build/app.js",
+        "buildstart": "npm run build && npm run start",
+        "build": "npm run clean && tsc",
+        "migrate": "npm run build && node_modules/.bin/sequelize db:migrate --env development",
+        "migrate:undo": "npm run build && node_modules/.bin/sequelize db:migrate:undo --env development",
+        "migrate:undo:all": "npm run build && node_modules/.bin/sequelize db:migrate:undo:all --env development"
+    },
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "google-protobuf": "^3.12.2",
+        "grpc": "^1.24.3",
+        "moment": "^2.27.0",
+        "pg": "^8.2.1",
+        "sequelize": "^5.21.2",
+        "sequelize-cli": "^5.5.1",
+        "ts-node": "^8.8.1",
+        "ts-node-dev": "^1.0.0-pre.44",
+        "tslint": "^6.1.0",
+        "winston": "^3.2.1",
+        "winston-daily-rotate-file": "^4.4.2"
+    },
+    "devDependencies": {
+        "@grpc/proto-loader": "^0.5.4",
+        "@types/dotenv": "^8.2.0",
+        "@types/google-protobuf": "^3.7.2",
+        "@types/pg": "^7.14.3",
+        "@types/sequelize": "^4.28.6",
+        "grpc-tools": "^1.9.0",
+        "grpc_tools_node_protoc_ts": "^4.0.0",
+        "tslint-clean-code": "^0.2.7",
+        "typescript": "^3.8.3"
+    }
+}
