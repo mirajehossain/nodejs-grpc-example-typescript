@@ -9,8 +9,8 @@ import {
     GetUserResponse,
     UpdateUserRequest,
     UpdateUserResponse,
-} from '../proto/user/user_pb';
-import { UserService, IUserServer, UserClient } from '../proto/user/user_grpc_pb';
+} from '../pb/user_pb';
+import { UserService, IUserServer, UserClient } from '../pb/user_grpc_pb';
 
 import { hostUrl } from '../config/config';
 import logger from '../helpers/logger';

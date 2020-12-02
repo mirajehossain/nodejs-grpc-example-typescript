@@ -1,7 +1,7 @@
 import userHandler from '../handlers/user';
 import {
     CreateUserResponse, UpdateUserResponse, GetUserResponse, CreateUserRequest, DeleteUserRequest, GetUserRequest, UpdateUserRequest
-} from '../proto/user/user_pb';
+} from '../pb/user_pb';
 import { Empty } from 'google-protobuf/google/protobuf/empty_pb';
 import logger from '../helpers/logger';
 
@@ -18,7 +18,7 @@ export function CreateNewUser() {
     user.setMobile('01234567890');
     user.setAddress('Dhaka, Bangladesh');
 
-    client.createNewUser(user, (err, res: CreateUserResponse) => {
+    client.createNewUser(user, (err: any, res: CreateUserResponse) => {
         if (err) {
             logger.error('error: ', err);
             return err;
@@ -36,7 +36,7 @@ export function UpdateUser() {
     user.setFirstName('John update');
     user.setEmail('john@doe.com');
 
-    client.updateUser(user, (err, res: UpdateUserResponse) => {
+    client.updateUser(user, (err: any, res: UpdateUserResponse) => {
         if (err) {
             logger.error('error: ', err);
             return err;
@@ -52,7 +52,7 @@ export function GetUser() {
     const user: GetUserRequest = new GetUserRequest();
     user.setEmail('john@doe.com');
 
-    client.getUser(user, (err, res: GetUserResponse) => {
+    client.getUser(user, (err: any, res: GetUserResponse) => {
         if (err) {
             logger.error('error: ', err);
             return err;
@@ -68,7 +68,7 @@ export function DeleteUser() {
     const user: DeleteUserRequest = new DeleteUserRequest();
     user.setEmail('john@doe.com');
 
-    client.deleteUser(user, (err, res: Empty) => {
+    client.deleteUser(user, (err: any, res: Empty) => {
         if (err) {
             logger.error('error: ', err);
             return err;
