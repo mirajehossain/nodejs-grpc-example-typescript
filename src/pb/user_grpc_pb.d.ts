@@ -16,36 +16,36 @@ interface IUserService extends grpc.ServiceDefinition<grpc.UntypedServiceImpleme
 }
 
 interface IUserService_ICreateNewUser extends grpc.MethodDefinition<user_pb.CreateUserRequest, user_pb.CreateUserResponse> {
-    path: string; // "/user.User/CreateNewUser"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/user.User/CreateNewUser";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<user_pb.CreateUserRequest>;
     requestDeserialize: grpc.deserialize<user_pb.CreateUserRequest>;
     responseSerialize: grpc.serialize<user_pb.CreateUserResponse>;
     responseDeserialize: grpc.deserialize<user_pb.CreateUserResponse>;
 }
 interface IUserService_IGetUser extends grpc.MethodDefinition<user_pb.GetUserRequest, user_pb.GetUserResponse> {
-    path: string; // "/user.User/GetUser"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/user.User/GetUser";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<user_pb.GetUserRequest>;
     requestDeserialize: grpc.deserialize<user_pb.GetUserRequest>;
     responseSerialize: grpc.serialize<user_pb.GetUserResponse>;
     responseDeserialize: grpc.deserialize<user_pb.GetUserResponse>;
 }
 interface IUserService_IUpdateUser extends grpc.MethodDefinition<user_pb.UpdateUserRequest, user_pb.UpdateUserResponse> {
-    path: string; // "/user.User/UpdateUser"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/user.User/UpdateUser";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<user_pb.UpdateUserRequest>;
     requestDeserialize: grpc.deserialize<user_pb.UpdateUserRequest>;
     responseSerialize: grpc.serialize<user_pb.UpdateUserResponse>;
     responseDeserialize: grpc.deserialize<user_pb.UpdateUserResponse>;
 }
 interface IUserService_IDeleteUser extends grpc.MethodDefinition<user_pb.DeleteUserRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/user.User/DeleteUser"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/user.User/DeleteUser";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<user_pb.DeleteUserRequest>;
     requestDeserialize: grpc.deserialize<user_pb.DeleteUserRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;

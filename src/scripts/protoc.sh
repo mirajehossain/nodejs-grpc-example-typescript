@@ -14,19 +14,21 @@ for f in ../src/proto/*; do
       continue
   fi
 
+  echo "++++=============$f==============="
+
   # loop over all the available proto files and compile them into respective dir
   # JavaScript code generating
   ${GRPC_TOOLS_NODE_PROTOC} \
-      --js_out=import_style=commonjs,binary:"${f}" \
-      --grpc_out="${f}" \
+      --js_out=import_style=commonjs,binary:"../src/pb" \
+      --grpc_out="../src/pb" \
       --plugin=protoc-gen-grpc="${GRPC_TOOLS_NODE_PROTOC_PLUGIN}" \
-      -I "${f}" \
-      "${f}"/*.proto
+      --proto_path="../src/proto" \
+      "${f}"
 
   ${GRPC_TOOLS_NODE_PROTOC} \
       --plugin=protoc-gen-ts="${PROTOC_GEN_TS_PATH}" \
-      --ts_out="${f}" \
-      -I "${f}" \
-      "${f}"/*.proto
+      --ts_out="../src/pb" \
+      --proto_path="../src/proto" \
+      "${f}"
 
 done
