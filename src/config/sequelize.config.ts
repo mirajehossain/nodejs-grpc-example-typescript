@@ -12,5 +12,4 @@ import { default as dev } from './environments/development';
 
 module.exports = {
   development: { ...dev.database },
-  // production:{...production.database}, // add this if you have production configuration in the environments folder
 };

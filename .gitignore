@@ -18,3 +18,5 @@ build
 coverage
 
 logs
+
+.env
